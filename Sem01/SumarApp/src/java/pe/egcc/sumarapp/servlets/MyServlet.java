@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MyServlet extends HttpServlet {
 
   @Override
-  protected void service(HttpServletRequest request,
+  protected void doPost(HttpServletRequest request,
           HttpServletResponse response)
           throws ServletException, IOException {
     // Datos
@@ -39,8 +39,28 @@ public class MyServlet extends HttpServlet {
     out.println("<p>Número 1: " + n1 + "</p>");
     out.println("<p>Número 2: " + n2 + "</p>");
     out.println("<p>Suma: " + suma + "</p>");
+    out.println("<a href='index.html'>Volver</a>");
     out.println("</body>");
     out.println("</html>");
   }
 
+  @Override
+  protected void doGet(HttpServletRequest request, 
+          HttpServletResponse response) throws ServletException, IOException {
+    response.setContentType("text/html;charset=UTF-8");
+    PrintWriter out = response.getWriter();
+    out.println("<!DOCTYPE html>");
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<title>SUMA</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<p>Debes usar el formulario.</p>");
+    out.println("<a href='index.html'>Ir al formulario</a>");
+    out.println("</body>");
+    out.println("</html>");
+  }
+
+  
+  
 }
