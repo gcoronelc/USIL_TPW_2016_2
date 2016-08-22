@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class VentaServlet extends HttpServlet {
 
   @Override
-  protected void doGet(HttpServletRequest request, 
+  protected void doPost(HttpServletRequest request, 
           HttpServletResponse response) throws ServletException, IOException {
   
     // Recuperar datos
