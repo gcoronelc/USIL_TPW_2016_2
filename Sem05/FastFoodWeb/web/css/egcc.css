@@ -1,0 +1,13 @@
+body{
+  background-color: #A4A4A4;
+  color: white;
+  font-family: Arial;
+  font-size: 12px;
+}
+
+h1{
+  color: #0B4C5F;
+  border-bottom: #0B4C5F thin solid;
+  font-size: 18;
+  font-weight: bold;
+}
