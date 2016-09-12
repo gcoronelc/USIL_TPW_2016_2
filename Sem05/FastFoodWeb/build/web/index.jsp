@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +21,7 @@
     <div id="_pagina">
       <img alt="" src="img/logo.jpg" />
       <h1>INICIO DE SESIÓN</h1>
+      <p>${requestScope.error}</p>
       <form method="post" action="LogonIngreso">
         <table>
           <tr>
