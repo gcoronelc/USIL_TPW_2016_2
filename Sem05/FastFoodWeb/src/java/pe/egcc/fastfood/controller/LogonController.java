@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pe.egcc.fastfood.model.Empleado;
 import pe.egcc.fastfood.service.LogonService;
 
@@ -26,10 +27,14 @@ public class LogonController extends HttpServlet {
     String path = request.getServletPath();
     if(path.equals("/LogonIngreso")){
       logonIngreso(request,response);
+    } else if(path.equals("/LogonSalir")){
+      logonSalir(request,response);
     }
     
   }
 
+  
+  
   private void logonIngreso(HttpServletRequest request, 
           HttpServletResponse response) throws ServletException, IOException {
     String destino = "";
@@ -40,6 +45,9 @@ public class LogonController extends HttpServlet {
       // Proceso
       LogonService service = new LogonService();
       Empleado bean = service.validar(usuario, clave);
+      // Guardando datos en session
+      HttpSession session = request.getSession();
+      session.setAttribute("usuario", bean);
       destino = "main.jsp";
     } catch (Exception e) {
       e.printStackTrace();
@@ -49,6 +57,16 @@ public class LogonController extends HttpServlet {
     // Forward
     RequestDispatcher rd = request.getRequestDispatcher(destino);
     rd.forward(request, response);
+  }
+
+  private void logonSalir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // Cerrar session
+    HttpSession session = request.getSession();
+    session.invalidate();
+    // Forward
+    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+    rd.forward(request, response);
+    
   }
 
   

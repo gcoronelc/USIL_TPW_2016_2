@@ -1,10 +1,5 @@
-<%-- 
-    Document   : main
-    Created on : 12-sep-2016, 12:28:30
-    Author     : firefox_usr
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +7,15 @@
     <title>JSP Page</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    
+    <c:if test="${sessionScope.usuario != null}">
+      <h1>Hello ${sessionScope.usuario.nombre} </h1>
+    </c:if>
+      
+    <c:if test="${sessionScope.usuario == null}">
+      <h1>No hay session activa </h1>      
+      <a href="LogonSalir">Cerrar Session</a>
+    </c:if>
+      
   </body>
 </html>
