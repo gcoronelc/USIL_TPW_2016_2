@@ -12,6 +12,15 @@ h1{
   font-weight: bold;
 }
 
+.egcc_error{
+  width: 760px;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #F6D8CE;
+  color: #424242;
+}
+
+
 .egcc_page{
   width: 800px;
   margin: 10px auto;

@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <table style="width: 100%; vertical-align: middle;">
   <tr>
-    <td>
+    <td style="width: 50%;">
       Servicios:
       - Desarrollo de Software<br/>
       - Capacitación<br/>
