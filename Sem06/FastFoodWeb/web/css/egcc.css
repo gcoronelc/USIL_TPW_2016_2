@@ -73,3 +73,19 @@ h1{
   text-align: center;
   font-weight: bold;
 }
+
+.egcc_tabla_cabecera{
+  background-color:#0B4C5F;
+  color: white;
+}
+
+.egcc_tabla_row1{
+  background-color: #A4A4A4;
+  color: white;
+}
+
+.egcc_tabla_row2{
+  background-color: #0079b2;
+  color: white;
+}
+

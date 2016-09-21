@@ -1,7 +1,6 @@
 package pe.egcc.fastfood.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.egcc.fastfood.model.Cliente;
 import pe.egcc.fastfood.service.ClienteService;
+import pe.egcc.fastfood.service.PedidoService;
 
 /**
  *
@@ -40,6 +40,8 @@ public class ClienteController extends HttpServlet {
       service = new ClienteService();
       Cliente bean = service.traerCliente(codigo);
       request.setAttribute("bean", bean);
+      PedidoService pedidoService = new PedidoService();
+      request.setAttribute("pedidos", pedidoService.traerPedidosPorCliente(codigo));
     } catch (Exception e) {
       request.setAttribute("error", e.getMessage());
     }
