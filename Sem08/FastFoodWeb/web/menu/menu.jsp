@@ -17,7 +17,7 @@
 
     <li><a href="#">Tablas</a>
       <ul>
-        <li><a href="crearArticulo.jsp">Crear Articulo</a></li>
+        <li><a href="CrearArticuloForm">Crear Articulo</a></li>
         <li><a href="#">Horizontal CSS Menus</a></li>
         <li><a href="#">Vertical CSS Menus</a></li>
         <li><a href="#">Dreamweaver Menus</a></li>

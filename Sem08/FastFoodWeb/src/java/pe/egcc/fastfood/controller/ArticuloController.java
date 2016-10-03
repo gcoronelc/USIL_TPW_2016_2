@@ -1,12 +1,14 @@
 package pe.egcc.fastfood.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.egcc.fastfood.model.Articulo;
+import pe.egcc.fastfood.service.ArticuloService;
 
 /**
  *
@@ -34,12 +36,36 @@ public class ArticuloController extends HttpServlet {
     
   } // service
 
-  private void crearArticuloForm(HttpServletRequest request, HttpServletResponse response) {
-  
+  private void crearArticuloForm(HttpServletRequest request, 
+          HttpServletResponse response) throws ServletException, IOException {
+    // Proceso
+    ArticuloService service = new ArticuloService();
+    request.setAttribute("categorias", service.getCategorias());
+    // Forware
+    RequestDispatcher rd;
+    rd = request.getRequestDispatcher("crearArticulo.jsp");
+    rd.forward(request, response);
   } // Fin de crearArticuloForm
 
-  private void crearArticuloSave(HttpServletRequest request, HttpServletResponse response) {
+  private void crearArticuloSave(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   
+    try {
+      // Datos
+      Articulo art = new Articulo();
+      art.setIdCat(Integer.parseInt(request.getParameter("cat")));
+      art.setNombre(request.getParameter("nombre"));
+      art.setPrecio(Double.parseDouble(request.getParameter("precio")));
+      // Proceso
+      ArticuloService service = new ArticuloService();
+      service.crearArticulo(art);
+      request.setAttribute("codigo", art.getId());
+    } catch (Exception e) {
+      request.setAttribute("error", e.getMessage());
+    }
+    // Forward
+    RequestDispatcher rd;
+    rd = request.getRequestDispatcher("crearArticulo.jsp");
+    rd.forward(request, response);
   } // Fin de crearArticuloSave
   
   
