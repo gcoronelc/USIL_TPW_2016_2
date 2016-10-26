@@ -18,6 +18,15 @@ href="<c:url value="/resources/css/estilos.css"/>">
 		</select>
 		<input type="submit" value="Consultar" />
 	</form>
+	
+	<c:if test="${error != null}">
+	 <p style="color:red;">${error}</p>
+	</c:if>
+	
+	<c:if test="${mensaje != null}">
+   <p style="color:blue;">${mensaje}</p>
+  </c:if>
+	
 
 	<c:if test="${lista != null}">
 		<table class="egcc_table">
