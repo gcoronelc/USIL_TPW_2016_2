@@ -1,0 +1,160 @@
+/*
+Empresa        :  EurekaBank
+Software       :  Sistema Financiero para Colegios
+DBMS           :  MySQL Server
+Base de Datos  :  COLEGIO
+Modulo         :  SEGURIDAD
+Script         :  Crea la Base de Datos
+Responsable    :  Ing. Eric Gustavo Coronel Castillo
+Telefono       :  (511) 9966-64457
+Email          :  gcoronelc@gmail.com
+Sitio Web      :  http://www.desarrollasoftware.com
+Blog           :  http://gcoronelc.blogspot.com
+*/
+
+
+-- =============================================
+-- Creación de la Base de Datos
+-- =============================================
+
+DROP DATABASE IF EXISTS COLEGIO;
+
+CREATE DATABASE COLEGIO;
+
+
+-- =============================================
+-- Seleccionar la Base de Datos
+-- =============================================
+
+USE COLEGIO;
+
+
+-- =============================================
+-- Tablas
+-- =============================================
+
+CREATE TABLE EMPLEADO
+(
+	IDEMP                INTEGER AUTO_INCREMENT,
+	NOMBRE               VARCHAR(60) NOT NULL,
+	APELLIDO             VARCHAR(60) NULL,
+	DNI                  VARCHAR(20) NOT NULL,
+	DIRECCION            VARCHAR(150) NULL,
+	TELEFONO             VARCHAR(40) NULL,
+	CORREO               VARCHAR(100) NOT NULL,
+	ESTADO               INTEGER NOT NULL,
+	CONSTRAINT PK_EMPLEADO PRIMARY KEY (IDEMP)
+);
+
+CREATE TABLE USUARIO
+(
+	IDEMP                INTEGER NOT NULL,
+	USUARIO              VARCHAR(20) NOT NULL,
+	CLAVE                VARCHAR(40) NOT NULL,
+	ESTADO               INTEGER NOT NULL,
+	CONSTRAINT PK_USUARIO PRIMARY KEY (IDEMP),
+	CONSTRAINT FK_USUARIO_EMPLEADO 
+		FOREIGN KEY (IDEMP) REFERENCES EMPLEADO (IDEMP)
+);
+
+
+
+CREATE TABLE ROL
+(
+	IDROL                INTEGER AUTO_INCREMENT,
+	NOMBRE               VARCHAR(20) NULL,
+	DESCRIPCION          VARCHAR(200) NOT NULL,
+	ESTADO               INTEGER NOT NULL,
+	CONSTRAINT PK_ROL PRIMARY KEY (IDROL)
+);
+
+
+
+CREATE TABLE PERMISO
+(
+	IDEMP                INTEGER NOT NULL,
+	IDROL                INTEGER NOT NULL,
+	ESTADO               INTEGER NOT NULL,
+	CONSTRAINT PK_PERMISO PRIMARY KEY (IDEMP,IDROL),
+	CONSTRAINT FK_PERMISO_USUARIO FOREIGN KEY (IDEMP) REFERENCES USUARIO (IDEMP),
+	CONSTRAINT FK_PERMISO_ROL FOREIGN KEY (IDROL) REFERENCES ROL (IDROL)
+);
+
+
+-- =============================================
+-- Datos
+-- =============================================
+
+-- EMPLEADOS
+
+INSERT INTO EMPLEADO VALUES
+(1,'JUAN CARLOS','PEREZ TAMBRAICO','10874356','LOS OLIVOS','908723451','JPEREZ@GMAIL.COM',1);
+
+INSERT INTO EMPLEADO VALUES
+(2,'ROXANA ARACELI','MEZA LOPEZ','90324567','SAN JUAN DE LURIGANCHO','986754123','RMEZA@GMAIL.COM',1);
+
+INSERT INTO EMPLEADO VALUES
+(3,'WALTER ALFONSO','BENAVENTE FIGUEROA','89435678','LOS OLIVOS','908943568','WBENAVENTE@GMAIL.COM',0);
+
+INSERT INTO EMPLEADO VALUES
+(4,'VIVIANA NELIDA','QUISPE ROMERO','10674356','MIRAFLORES','909054125','VQUISPE@GMAIL.COM',1);
+
+INSERT INTO EMPLEADO VALUES
+(5,'ANGELA LEONOR','GUEVARA BRAVO','10674355','LINCE','895467236','AGUEVARA@GMAIL.COM',1);
+
+
+-- USUARIO
+
+INSERT INTO USUARIO VALUES(1,'JUAN',SHA('cazador'),1);
+INSERT INTO USUARIO VALUES(2,'ROXY',SHA('princesa'),1);
+INSERT INTO USUARIO VALUES(3,'WALTER',SHA('cerebro'),0);
+INSERT INTO USUARIO VALUES(4,'VIVI',SHA('suerte'),1);
+INSERT INTO USUARIO VALUES(5,'ANGELA',SHA('tigresa'),1);
+
+-- ROLES
+
+INSERT INTO ROL VALUES(1,'ADMINISTRADOR','Tiene acceso a todos los módulos.',1);
+INSERT INTO ROL VALUES(2,'NIVEL 1','No tiene acceso al módulo de seguridad.',1);
+INSERT INTO ROL VALUES(3,'NIVEL 2','No tiene acceso al modulo de seguridad y planificación.',1);
+INSERT INTO ROL VALUES(4,'NIVEL 3','Solo tiene acceso al modulo de consultas y reportes.',1);
+
+-- PERMISOS
+
+-- USUARIO 1
+INSERT INTO PERMISO VALUES(1,1,1);
+INSERT INTO PERMISO VALUES(1,2,0);
+INSERT INTO PERMISO VALUES(1,3,0);
+INSERT INTO PERMISO VALUES(1,4,0);
+
+-- USUARIO 2
+INSERT INTO PERMISO VALUES(2,1,0);
+INSERT INTO PERMISO VALUES(2,2,1);
+INSERT INTO PERMISO VALUES(2,3,0);
+INSERT INTO PERMISO VALUES(2,4,0);
+
+-- USUARIO 3
+INSERT INTO PERMISO VALUES(3,1,0);
+INSERT INTO PERMISO VALUES(3,2,0);
+INSERT INTO PERMISO VALUES(3,3,1);
+INSERT INTO PERMISO VALUES(3,4,0);
+
+-- USUARIO 4
+INSERT INTO PERMISO VALUES(4,1,0);
+INSERT INTO PERMISO VALUES(4,2,0);
+INSERT INTO PERMISO VALUES(4,3,1);
+INSERT INTO PERMISO VALUES(4,4,0);
+
+-- USUARIO 5
+INSERT INTO PERMISO VALUES(5,1,0);
+INSERT INTO PERMISO VALUES(5,2,0);
+INSERT INTO PERMISO VALUES(5,3,0);
+INSERT INTO PERMISO VALUES(5,4,1);
+
+
+
+
+
+
+
+
+
