@@ -151,9 +151,21 @@ INSERT INTO PERMISO VALUES(5,3,0);
 INSERT INTO PERMISO VALUES(5,4,1);
 
 
+-- =============================================
+-- Usuario de MySQL
+-- =============================================
 
 
+USE MYSQL;
+GRANT ALL PRIVILEGES ON *.* TO 'colegio'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
+GRANT ALL PRIVILEGES ON *.* TO 'colegio'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+USE COLEGIO;
+
+SHOW TABLES;
 
 
 
