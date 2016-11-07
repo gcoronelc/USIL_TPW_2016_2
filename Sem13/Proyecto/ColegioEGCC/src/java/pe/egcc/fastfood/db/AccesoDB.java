@@ -18,7 +18,7 @@ public final class AccesoDB {
   public static Connection getConnection() throws SQLException{
     // Parámetros
     String driver = "com.mysql.jdbc.Driver";
-    String urlDB = "jdbc:mysql://172.17.19.205:3306/colegio";
+    String urlDB = "jdbc:mysql://172.17.19.251:3306/colegio";
     String user = "colegio";
     String pass = "admin";
     // Variable

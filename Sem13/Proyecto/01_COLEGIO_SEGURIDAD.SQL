@@ -105,18 +105,18 @@ INSERT INTO EMPLEADO VALUES
 
 -- USUARIO
 
-INSERT INTO USUARIO VALUES(1,'JUAN',SHA('cazador'),1);
-INSERT INTO USUARIO VALUES(2,'ROXY',SHA('princesa'),1);
-INSERT INTO USUARIO VALUES(3,'WALTER',SHA('cerebro'),0);
-INSERT INTO USUARIO VALUES(4,'VIVI',SHA('suerte'),1);
-INSERT INTO USUARIO VALUES(5,'ANGELA',SHA('tigresa'),1);
+INSERT INTO USUARIO VALUES(1,'juan',SHA('cazador'),1);
+INSERT INTO USUARIO VALUES(2,'roxy',SHA('princesa'),1);
+INSERT INTO USUARIO VALUES(3,'walter',SHA('cerebro'),0);
+INSERT INTO USUARIO VALUES(4,'vivi',SHA('suerte'),1);
+INSERT INTO USUARIO VALUES(5,'angela',SHA('tigresa'),1);
 
 -- ROLES
 
 INSERT INTO ROL VALUES(1,'ADMINISTRADOR','Tiene acceso a todos los módulos.',1);
-INSERT INTO ROL VALUES(2,'NIVEL 1','No tiene acceso al módulo de seguridad.',1);
-INSERT INTO ROL VALUES(3,'NIVEL 2','No tiene acceso al modulo de seguridad y planificación.',1);
-INSERT INTO ROL VALUES(4,'NIVEL 3','Solo tiene acceso al modulo de consultas y reportes.',1);
+INSERT INTO ROL VALUES(2,'VENTAS','No tiene acceso a los modulos de ventas y consultas.',1);
+INSERT INTO ROL VALUES(3,'OPERADOR','No tiene acceso a los modulos de planificación, consultas y reportes.',1);
+INSERT INTO ROL VALUES(4,'USUARIO','Solo tiene acceso al modulo de consultas y reportes.',1);
 
 -- PERMISOS
 
@@ -129,7 +129,7 @@ INSERT INTO PERMISO VALUES(1,4,0);
 -- USUARIO 2
 INSERT INTO PERMISO VALUES(2,1,0);
 INSERT INTO PERMISO VALUES(2,2,1);
-INSERT INTO PERMISO VALUES(2,3,0);
+INSERT INTO PERMISO VALUES(2,3,1);
 INSERT INTO PERMISO VALUES(2,4,0);
 
 -- USUARIO 3
