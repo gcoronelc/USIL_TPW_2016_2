@@ -11,9 +11,9 @@
     <c:if test="${modVentas == 1}">
     <li><a href="#">Ventas</a>
       <ul>
-        <li><a href="#">Drop Down CSS Menus</a></li>
-        <li><a href="#">Horizontal CSS Menus</a></li>
-        <li><a href="#">Vertical CSS Menus</a></li>
+        <li><a href="#">Estudiantes</a></li>
+        <li><a href="#">Ingreso</a></li>
+        <li><a href="#">Matricula</a></li>
         <li><a href="#">Dreamweaver Menus</a></li>
       </ul>
     </li>
@@ -22,10 +22,9 @@
     <c:if test="${modPlan == 1}">
     <li><a href="#">Planificación</a>
       <ul>
-        <li><a href="CrearArticuloForm">Crear Articulo</a></li>
-        <li><a href="#">Horizontal CSS Menus</a></li>
-        <li><a href="#">Vertical CSS Menus</a></li>
-        <li><a href="#">Dreamweaver Menus</a></li>
+        <li><a href="#">Aulas</a></li>
+        <li><a href="#">Periodos</a></li>
+        <li><a href="#">Sección</a></li>
       </ul>
     </li>
     </c:if>
