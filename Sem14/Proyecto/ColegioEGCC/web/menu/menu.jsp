@@ -12,9 +12,9 @@
     <li><a href="#">Ventas</a>
       <ul>
         <li><a href="#">Estudiantes</a></li>
-        <li><a href="#">Ingreso</a></li>
+        <li><a href="#">Cuota Ingreso</a></li>
         <li><a href="#">Matricula</a></li>
-        <li><a href="#">Dreamweaver Menus</a></li>
+        <li><a href="#">Pago de Cuota</a></li>
       </ul>
     </li>
     </c:if>

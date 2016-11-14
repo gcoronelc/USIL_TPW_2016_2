@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/crearPeriodo.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/modPeriodo.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/crearAula.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/index.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/cebecera.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/eliminarPeriodo.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/eliminarAula.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/modAula.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/css/egcc.css</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/modSeccion.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/crearSeccion.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/eliminarSeccion.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Practica3_meza/web/pie.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

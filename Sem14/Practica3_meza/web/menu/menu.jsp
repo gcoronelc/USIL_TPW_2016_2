@@ -11,10 +11,10 @@
     <c:if test="${VEN == 1}">
     <li><a href="#">Ventas</a>
       <ul>
-        <li><a href="#">Drop Down CSS Menus</a></li>
-        <li><a href="#">Horizontal CSS Menus</a></li>
-        <li><a href="#">Vertical CSS Menus</a></li>
-        <li><a href="#">Dreamweaver Menus</a></li>
+        <li><a href="#">Estudiantes</a></li>
+        <li><a href="#">Cuota de Ingreso</a></li>
+        <li><a href="#">Matricula</a></li>
+        <li><a href="#">Pago de Cuota</a></li>
       </ul>
     </li>
     </c:if>
