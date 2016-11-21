@@ -12,7 +12,7 @@
     <li><a href="#">Ventas</a>
       <ul>
         <li><a href="#">Estudiantes</a></li>
-        <li><a href="procIngresoPaso1.jsp">Cuota Ingreso</a></li>
+        <li><a href="VentaGetProIngreso">Cuota Ingreso</a></li>
         <li><a href="#">Matricula</a></li>
         <li><a href="#">Pago de Cuota</a></li>
       </ul>

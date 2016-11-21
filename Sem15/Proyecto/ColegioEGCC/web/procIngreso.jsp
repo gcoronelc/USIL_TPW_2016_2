@@ -21,8 +21,20 @@
       </div>
       
       <div class="egcc_contenido">
-        <h1>PROCESO INGRESO - PASO 1</h1>
-        
+        <h1>PROCESO INGRESO</h1>
+        <form method="post" action="">
+          <div>
+            <label>Estudiante:</label>
+            <select>
+              <option value="0">Seleccione estudiante</option>
+              <c:forEach items="${requestScope.listaEst}" var="r">
+                <option value="${r.IDEST}">${r.NOMBRE}</option>
+              </c:forEach>
+            </select>
+          </div>
+          
+          
+        </form>
       
       
       

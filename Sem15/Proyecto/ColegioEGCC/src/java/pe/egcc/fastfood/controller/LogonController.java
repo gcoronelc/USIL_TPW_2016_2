@@ -58,7 +58,6 @@ public class LogonController extends HttpServlet {
       
       destino = "main.jsp";
     } catch (Exception e) {
-      e.printStackTrace();
       request.setAttribute("error", e.getMessage());
       destino = "index.jsp";
     }
