@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pe.egcc.fastfood.model.Empleado;
 import pe.egcc.fastfood.service.LogonService;
+import pe.egcc.fastfood.service.SeguridadService;
 
 /**
  *
@@ -33,8 +34,6 @@ public class LogonController extends HttpServlet {
     
   }
 
-  
-  
   private void logonIngreso(HttpServletRequest request, 
           HttpServletResponse response) throws ServletException, IOException {
     String destino = "";
@@ -50,11 +49,12 @@ public class LogonController extends HttpServlet {
       session.setAttribute("usuario", bean);
       
       // Roles
-      session.setAttribute("modVentas", 1);
-      session.setAttribute("modPlan", 1);
+      SeguridadService seguridadService = new SeguridadService();
+      session.setAttribute("modVentas", seguridadService.getPermiso(bean.getIdemp(), SeguridadService.SEG_MOD_VENTAS));
+      session.setAttribute("modPlan", seguridadService.getPermiso(bean.getIdemp(), SeguridadService.SEG_MOD_PLANIFICACION));
       session.setAttribute("modCon", 1);
-      session.setAttribute("modRepo", 0);
-      session.setAttribute("modSegu", 1);
+      session.setAttribute("modRepo", seguridadService.getPermiso(bean.getIdemp(), SeguridadService.SEG_MOD_REPORTES));
+      session.setAttribute("modSegu", seguridadService.getPermiso(bean.getIdemp(), SeguridadService.SEG_MOD_SEGURIDAD));
       
       destino = "main.jsp";
     } catch (Exception e) {

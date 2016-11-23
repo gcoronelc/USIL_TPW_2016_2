@@ -19,7 +19,7 @@
   </head>
   <body>
     <div id="_pagina">
-      <img alt="" src="img/logo.jpg" />
+      <img alt="" src="img/logo.png" />
       <h1>INICIO DE SESIÓN</h1>
       <c:if test="${requestScope.error != null}">
         <p class="egcc_error">${requestScope.error}</p>
